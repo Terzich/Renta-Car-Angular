@@ -9,6 +9,7 @@ yearOfProduction:number;
 color:string;
 numberOfDoors:number;
 price:string;
+image:string;
 }
 
 

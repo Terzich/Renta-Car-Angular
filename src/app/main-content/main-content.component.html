@@ -1,20 +1,33 @@
+<input style="margin-left:40%; margin-top: 10px;" [(ngModel)]="searchCar" placeholder="Pretraži automobile">
+<div  style="margin: auto;" id="maindiv">
 
+    <div></div>
+    <div class="row">
 
-<div  style="display: block;">
-
-    <div  *ngFor="let car of cars">
-        <div class="card" style="width: 18rem;">
-
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
+        <div  *ngFor="let car of cars" class="col-4" style="margin-top: 20px">
+            <div class="card" [ngStyle]="cardStyle">
+                <img class="card-img-top" src="{{car.image}}" alt="Card image cap" height="175px" >
+                <h5 class="card-title" style="color: #0082e6; font-weight: bold; text-align: center; margin-top: 5px;">{{car.name}}</h5>
+                <div class="card-body" [style.display]="cardDetails">
+                    <p class="card-text" style="font-weight: bold;">Boja: {{car.color}}</p>
+                    <p class="card-text" style="font-weight: bold;">Konjske snage: {{car.horsePower}}</p>
+                    <p class="card-text" style="font-weight: bold;">Godina proizvodnje: {{car.yearOfProduction}}</p>
+                    <p class="card-text" style="font-weight: bold;">Broj vrata: {{car.numberOfDoors}}</p>
+                    <p class="card-text" style="font-weight: bold; color: darkred;">Cijena: {{car.price}}</p>
     
+                    <input [(ngModel)]="car.name" type="text" placeholder="Novo ime automobila">
+
+                </div>
+            </div>
+            <button  (click)="showDetails()" class="btn btn-primary" style="margin:10px 0 0 80px;">Uredi podatke</button>
+        </div>
+
+    </div>
+
+    
+    <div></div>
 </div>
+    
     
 
 
