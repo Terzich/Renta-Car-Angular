@@ -1,15 +1,29 @@
 .container{
 margin-top: 20px;
 padding: 20px;
-border: #1b9bff 4px solid;
+border: gray 4px solid;
 border-radius: 20px;
 margin-bottom: 20px;
 
 
 }
-.container img{
-margin-left: 70px;
+hr{
+    border: 1px solid #bccedb;
+}
+
+.car-info{
+    font-weight: bold;
+    color:#8fa4b3;
+}
+#opis{
+    color: rgb(123, 240, 112);
+    font-weight: bold;
+
 
 }
 
+.car-info{
+
+margin-left: 10px;
+}
 

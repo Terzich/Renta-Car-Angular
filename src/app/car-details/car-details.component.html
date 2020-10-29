@@ -1,17 +1,29 @@
 <div *ngIf="car" class="container">
-    <div class="row" >
-        <div class="col-sm-4">
-            <img src="car.image">
-            {{car.name}}
+    <div class="row">
+        <div class="col-lg-4">
+            <img src="{{car.image}}" height="300px" width="350px">
         </div>
-        <div class="col-lg">
+        <div class="col-lg-8 text-center">
+            <p style="color: #1b9bff; font-size: 25px; font-weight: bold; font-style: italic;">{{car.name}}</p>
+            <hr>
+            <p class="car-info">
+                <span>Godište:   {{car.yearOfProduction}}</span><br> 
+                <span>Konjskih snaga:    {{car.horsePower}}</span><br>
+                <span>Boja: {{car.color}}</span>   <br>
+                <span>Broj vrata: {{car.numberOfDoors}}</span>   
 
+            </p>
+            <hr>
+            <p id="opis">
+                {{car.details}}
+
+            </p>
 
         </div>
-
-
-
     </div>
 
 
+
 </div>
+
+

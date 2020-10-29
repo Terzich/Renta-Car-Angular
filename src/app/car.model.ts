@@ -10,6 +10,7 @@ color:string;
 numberOfDoors:number;
 price:string;
 image:string;
+details:string;
 }
 
 

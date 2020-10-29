@@ -20,11 +20,14 @@ export class MainContentComponent implements OnInit {
   constructor(private carService:CarService, private messageService:MessageService) { }
   
   ngOnInit(): void {
-    this.cars=this.carService.GetCars();
+    this.cars=this.carService.GetCars("");
   }
   showDetails(car:Car):void{
    this.selectedCar=car;
 
+  }
+  getSearchedCars(){
+    this.cars=this.carService.GetCars(this.searchCar);
   }
   addMessage():void{
     this.messageService.add("Poruka generisana");

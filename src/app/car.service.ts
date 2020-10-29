@@ -9,7 +9,22 @@ export class CarService {
 
   constructor(){}
   
-  GetCars():Car[]{
-    return CARS;
+  GetCars(searchWord:string):Car[]{
+    var filteredList:Car[]=[];
+    if(searchWord=="")
+    {
+      return CARS;
+
+    }
+    else{
+      CARS.filter((c:Car)=>{
+        if(c.name.toLowerCase().startsWith(searchWord.toLowerCase())){
+          filteredList.push(c);
+        }
+
+      });
+      return filteredList;
+    }
+
   }
 }
