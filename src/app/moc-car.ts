@@ -1,5 +1,5 @@
 import { Car } from './car.model';
-
+ 
 export const CARS:Car[]=[
 {
     id:1,
@@ -9,7 +9,7 @@ export const CARS:Car[]=[
     color:"Crna",
     numberOfDoors:5,
     price:"150 KM",
-    image:"./assets/Images/mercedes e220.png"
+    image:"./assets/Images/unnamed.png"
 },
 {
     id:2,
@@ -19,7 +19,7 @@ export const CARS:Car[]=[
     color:"Crna",
     numberOfDoors:5,
     price:"450 KM",
-    image:"./assets/Images/mercedes s200.png"
+    image:"./assets/Images/mercedes s.png"
 
 },
 {
@@ -41,7 +41,7 @@ export const CARS:Car[]=[
     color:"Bijela",
     numberOfDoors:5,
     price:"110 KM",
-    image:"./assets/Images/golf VI.png"
+    image:"./assets/Images/golf VII.png"
 },
 {
     id:5,
@@ -66,7 +66,3 @@ export const CARS:Car[]=[
 
 
 ];
-
-
-
-

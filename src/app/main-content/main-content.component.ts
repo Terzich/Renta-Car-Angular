@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Car } from '../car.model';
-import { CARS } from '../moc-car';
+import { CarService } from '../car.service';
+import { MessageService } from '../message.service';
 
 
 @Component({
@@ -11,31 +12,27 @@ import { CARS } from '../moc-car';
 export class MainContentComponent implements OnInit {
 
   public searchCar="";
+  public selectedCar:Car;
 
-  public cardDetails="none";
-  
-  public cardStyle={
-    width:"18rem",
-    height:"250px",
-    padding:"10px"
-  };
 
   public name="";
-  cars:Car[]=CARS;
-  constructor() { }
+  cars:Car[];
+  constructor(private carService:CarService, private messageService:MessageService) { }
   
   ngOnInit(): void {
+    this.cars=this.carService.GetCars();
   }
-  showDetails():void{
-    if(this.cardDetails=="none"){
-      this.cardStyle.height="500px";
-      this.cardDetails="inline"
-    }
-    else{
-      this.cardStyle.height="250px";
-      this.cardDetails="none"
-    }
+  showDetails(car:Car):void{
+   this.selectedCar=car;
 
+  }
+  addMessage():void{
+    this.messageService.add("Poruka generisana");
+    console.log("Messages:",this.messageService.messages);
+  }  
+
+  clear(){
+    this.messageService.celar();
   }
 
 }
